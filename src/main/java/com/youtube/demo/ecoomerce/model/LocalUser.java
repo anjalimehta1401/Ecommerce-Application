@@ -79,6 +79,7 @@ public class LocalUser {
      */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+        System.out.println(firstName);
     }
 
     /**

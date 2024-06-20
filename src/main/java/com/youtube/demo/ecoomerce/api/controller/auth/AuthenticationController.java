@@ -5,10 +5,12 @@ import com.youtube.demo.ecoomerce.api.model.LoginBody;
 import com.youtube.demo.ecoomerce.api.model.LoginResponse;
 import com.youtube.demo.ecoomerce.api.model.RegistrationBody;
 import com.youtube.demo.ecoomerce.exception.userAlreadyExistsException;
+import com.youtube.demo.ecoomerce.model.LocalUser;
 import com.youtube.demo.ecoomerce.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -57,5 +59,11 @@ public class AuthenticationController  {
             response.setJwt(jwt);
             return ResponseEntity.ok(response);
         }
+    }
+
+    @GetMapping("/me")
+    public LocalUser getloggedInUserProfile(@AuthenticationPrincipal LocalUser user)
+    {
+        return user;
     }
 }

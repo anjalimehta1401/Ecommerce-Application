@@ -1,5 +1,6 @@
 package com.youtube.demo.ecoomerce.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
@@ -19,6 +20,8 @@ public class WebOrderQuantities {
     @Column(name = "quantity", nullable = false)
     private Integer quantity;
     /** The order itself. */
+
+    @JsonIgnore
     @ManyToOne(optional = false)
     @JoinColumn(name = "order_id", nullable = false)
     private WebOrder order;
@@ -35,6 +38,8 @@ public class WebOrderQuantities {
      * Sets the order.
      * @param order The order.
      */
+
+
     public void setOrder(WebOrder order) {
         this.order = order;
     }

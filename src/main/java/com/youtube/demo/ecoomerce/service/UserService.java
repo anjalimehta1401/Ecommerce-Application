@@ -40,6 +40,7 @@ public class UserService {
         user.setFirstName(registrationBody.getFirstName());
         user.setLastName(registrationBody.getLastName());
         user.setPassword(encryptionService.encryptPassword(registrationBody.getPassword()));
+        //   user.setPassword(encryptionService.encryptPassword(registrationBody.getPassword()));
         System.out.println(registrationBody.toString());
         return   localUserDAO.save(user);
 
@@ -56,8 +57,8 @@ public class UserService {
             System.out.println("login body pw "+ loginBody.getPassword());
             System.out.println("user pw " +user.getPassword());
 
-           // if (encryptionService.verifyPassword(loginBody.getPassword(), user.getPassword())) {
-            if (encryptionService.verifyPassword(encryptionService.encryptPassword(loginBody.getPassword()), encryptionService.encryptPassword(user.getPassword()))) {
+           if (encryptionService.verifyPassword(loginBody.getPassword(), user.getPassword())) {
+           // if (encryptionService.verifyPassword(encryptionService.encryptPassword(loginBody.getPassword()), encryptionService.encryptPassword(user.getPassword()))) {
 
                 System.out.println("reached here");
                 String token = jwtService.generateJWT(user);

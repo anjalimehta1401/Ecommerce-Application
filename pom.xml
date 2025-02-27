@@ -67,10 +67,25 @@
 			<scope>test</scope>
 		</dependency>
 
+
+<!--		<distributionManagement>-->
+<!--			<snapshotRepository>-->
+<!--				<id>snapshots</id>-->
+<!--				<name>a0gaelvdqxh16-artifactory-primary-0-snapshots</name>-->
+<!--				<url>https://triallsn7lb.jfrog.io/artifactory/myproject-libs-snapshot</url>-->
+<!--			</snapshotRepository>-->
+<!--		</distributionManagement>-->
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
+
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

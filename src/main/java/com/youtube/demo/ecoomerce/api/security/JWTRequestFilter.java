@@ -1,6 +1,7 @@
 package com.youtube.demo.ecoomerce.api.security;
 
 import ch.qos.logback.core.net.SMTPAppenderBase;
+import org.springframework.context.annotation.Bean;
 import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.youtube.demo.ecoomerce.model.LocalUser;
 import com.youtube.demo.ecoomerce.model.dao.LocalUserDAO;

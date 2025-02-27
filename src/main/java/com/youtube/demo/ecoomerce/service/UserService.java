@@ -61,7 +61,7 @@ public class UserService {
         user.getVerificationTokens().add(verificationToken);
         return verificationToken;
     }
-
+// hello
     public String loginUser(LoginBody loginBody) throws UserNotVerifiedException, EmailFailureException {
         Optional<LocalUser> opUser = localUserDAO.findByUsernameIgnoreCase(loginBody.getUsername());
         if (opUser.isPresent()) {
